@@ -193,7 +193,10 @@ s_cathala = SegmentIterration(
 );
 
 # ╔═╡ 41ea144f-9a7d-4c27-881f-41acec4f87ec
-plot(map(x->x[1], s_cathala), map(x->x[2], s_cathala), label = nothing)
+cathala_invariant_set = plot(map(x->x[1], s_cathala), map(x->x[2], s_cathala), label = nothing)
+
+# ╔═╡ 8fd68b8c-ed26-410a-84b0-353c817a74ad
+savefig(cathala_invariant_set, "results/problem_01_cathala.png");
 
 # ╔═╡ 3cf8e54b-44bd-4e03-8993-ea7f06c0bb06
 s_henon = SegmentIterration(
@@ -201,7 +204,10 @@ s_henon = SegmentIterration(
 );
 
 # ╔═╡ af42638e-702d-4a75-868d-e379ce4873e4
-plot(map(x->x[1], s_henon), map(x->x[2], s_henon), label = nothing)
+henon_invariant_set = plot(map(x->x[1], s_henon), map(x->x[2], s_henon), label = nothing)
+
+# ╔═╡ 70dbeb84-631e-4186-85c2-7037cc3ee1c1
+savefig(henon_invariant_set, "results/problem_01_henon.png");
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
@@ -1395,11 +1401,13 @@ version = "1.4.1+2"
 # ╟─e4486237-377d-4e5f-a65e-71f174a6c7dd
 # ╠═3816d364-bfde-46b5-ba3c-a8ad08597a36
 # ╠═41ea144f-9a7d-4c27-881f-41acec4f87ec
+# ╠═8fd68b8c-ed26-410a-84b0-353c817a74ad
 # ╟─c5886b94-cc49-4537-8257-369ab176de13
 # ╟─67362432-09ac-44e8-b2ce-92e42cfaba70
 # ╟─adda50bc-5fef-434d-bad8-b1863ca6f341
 # ╠═3cf8e54b-44bd-4e03-8993-ea7f06c0bb06
 # ╠═af42638e-702d-4a75-868d-e379ce4873e4
+# ╠═70dbeb84-631e-4186-85c2-7037cc3ee1c1
 # ╟─9d372eca-6e28-482c-9566-0ae31187d7d3
 # ╠═74603647-7ab4-4665-bb66-56aa8d9c0532
 # ╠═35192e36-21a3-4491-8e32-b4e95051c392
