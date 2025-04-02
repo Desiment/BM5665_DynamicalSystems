@@ -208,7 +208,7 @@ henon_invariant_set = plot(map(x->x[1], s_henon), map(x->x[2], s_henon), label =
 savefig(henon_invariant_set, "results/problem_01_henon.png");
 
 # ╔═╡ Cell order:
-# ╟─6d74a1d4-1af5-47f3-8d55-e57244fe50c4
+# ╠═6d74a1d4-1af5-47f3-8d55-e57244fe50c4
 # ╟─2ea660b7-a2f0-46d5-974e-4866cdbffb3e
 # ╟─d03eed77-0cac-411c-854f-2ef79f2d78f4
 # ╠═188550a0-870c-4f35-bfb4-0d1e5ea15d5b
