@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: pages-build-deployment
 
 on:
   push:
@@ -10,18 +10,18 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Set up Julia
+      - name: set-up-julia
         uses: julia-actions/setup-julia@v1
         with:
           version: '1.11.3'  # Use your preferred version
 
-      - name: Install dependencies
+      - name: install-dependencies
         run: julia --project=@. -e 'using Pkg; Pkg.instantiate()'
 
-      - name: Export notebooks
+      - name: export-notebooks
         run: julia --project=@. scripts/export.jl
 
-      - name: Deploy to gh-pages
+      - name: deploy-to-gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
