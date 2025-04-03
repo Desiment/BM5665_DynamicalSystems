@@ -232,7 +232,7 @@ ylabel!("Im")
 end
 
 # ╔═╡ 54687aa4-b3e7-444d-9195-b68768a6a77c
-savefig(julia_set, "results/"*output_filename)
+savefig(julia_set, if output_filename != "" "results/"*output_filename else "results/problem-02" end)
 
 # ╔═╡ Cell order:
 # ╟─0142c4dc-0fdf-11f0-3403-77788dee9947
@@ -249,7 +249,7 @@ savefig(julia_set, "results/"*output_filename)
 # ╠═0142c5de-0fdf-11f0-2b1b-3f8d30832926
 # ╟─0142c5e8-0fdf-11f0-3ac6-4df71525cc7a
 # ╠═0142c5f2-0fdf-11f0-315c-e7983fc65004
-# ╠═4aa35833-7758-49df-a74c-8c14f00958d3
+# ╟─4aa35833-7758-49df-a74c-8c14f00958d3
 # ╟─54687aa4-b3e7-444d-9195-b68768a6a77c
 # ╟─0142c5fc-0fdf-11f0-2342-032b21cc0b09
 # ╟─0142c624-0fdf-11f0-1886-095a02009662

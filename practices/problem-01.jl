@@ -129,6 +129,9 @@ md"""
 	end	
 	)
 
+# ╔═╡ 4285861d-1132-4049-b076-2787be315925
+@bind output_filename_cathala confirm(@htl("Choose output filename $(TextField())"))
+
 # ╔═╡ c5886b94-cc49-4537-8257-369ab176de13
 md"""
 #### Отображение Эно
@@ -158,14 +161,17 @@ md"""
 		$([
 			@htl("<li>Центральная точка d₀. d₀.x = $(Child("d0_x", NumberField(-5:0.1:5; default=0))); d₀.y = $(Child("d0_y", NumberField(-5:0.1:5; default=0)))"),
 			@htl("<li>Параметры области D. Высота = $(Child("H", NumberField(0:0.1:10; default=4))); Ширина = $(Child("W", NumberField(0:0.1:10; default=4)))"),
-			@htl("<li>Сторона начального квадрата L₀: $(Child("S", NumberField(0:0.1:2; default=1)))"),
+			@htl("<li>Сторона начального квадрата L₀: $(Child("S", NumberField(0:0.1:2; default=0.75)))"),
 			@htl("<li>h: $(Child("h", NumberField(0:0.0001:0.1; default=0.01)))"),
-			@htl("<li>Число итераций: $(Child("n", NumberField(0:50; default=15)))")
+			@htl("<li>Число итераций: $(Child("n", NumberField(0:50; default=20)))")
 		])
 		</ul>
 		""")
 	end	
 	)
+
+# ╔═╡ d570c279-328e-4e84-a68c-6c949f08e141
+@bind output_filename_henon confirm(@htl("Choose output filename $(TextField())"))
 
 # ╔═╡ 9d372eca-6e28-482c-9566-0ae31187d7d3
 md"""
@@ -194,7 +200,7 @@ s_cathala = SegmentIterration(
 cathala_invariant_set = plot(map(x->x[1], s_cathala), map(x->x[2], s_cathala), label = nothing)
 
 # ╔═╡ 8fd68b8c-ed26-410a-84b0-353c817a74ad
-savefig(cathala_invariant_set, "results/problem_01_cathala.png");
+savefig(cathala_invariant_set,  if output_filename_cathala != "" "results/"*output_filename_cathala else "results/problem-01-cathala.png" end);
 
 # ╔═╡ 3cf8e54b-44bd-4e03-8993-ea7f06c0bb06
 s_henon = SegmentIterration(
@@ -205,7 +211,7 @@ s_henon = SegmentIterration(
 henon_invariant_set = plot(map(x->x[1], s_henon), map(x->x[2], s_henon), label = nothing)
 
 # ╔═╡ 70dbeb84-631e-4186-85c2-7037cc3ee1c1
-savefig(henon_invariant_set, "results/problem_01_henon.png");
+savefig(henon_invariant_set, if output_filename_henon != "" "results/"*output_filename_henon else "results/problem-01-henon.png" end);
 
 # ╔═╡ Cell order:
 # ╠═6d74a1d4-1af5-47f3-8d55-e57244fe50c4
@@ -219,12 +225,14 @@ savefig(henon_invariant_set, "results/problem_01_henon.png");
 # ╟─e4486237-377d-4e5f-a65e-71f174a6c7dd
 # ╠═3816d364-bfde-46b5-ba3c-a8ad08597a36
 # ╠═41ea144f-9a7d-4c27-881f-41acec4f87ec
-# ╠═8fd68b8c-ed26-410a-84b0-353c817a74ad
+# ╟─4285861d-1132-4049-b076-2787be315925
+# ╟─8fd68b8c-ed26-410a-84b0-353c817a74ad
 # ╟─c5886b94-cc49-4537-8257-369ab176de13
 # ╟─67362432-09ac-44e8-b2ce-92e42cfaba70
-# ╟─adda50bc-5fef-434d-bad8-b1863ca6f341
+# ╠═adda50bc-5fef-434d-bad8-b1863ca6f341
 # ╠═3cf8e54b-44bd-4e03-8993-ea7f06c0bb06
 # ╠═af42638e-702d-4a75-868d-e379ce4873e4
-# ╠═70dbeb84-631e-4186-85c2-7037cc3ee1c1
+# ╟─d570c279-328e-4e84-a68c-6c949f08e141
+# ╟─70dbeb84-631e-4186-85c2-7037cc3ee1c1
 # ╟─9d372eca-6e28-482c-9566-0ae31187d7d3
 # ╟─2505b7a7-bc17-4504-befc-69a4a26cce74

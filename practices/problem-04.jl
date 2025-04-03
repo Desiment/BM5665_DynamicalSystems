@@ -107,7 +107,7 @@ begin
 end
 
 # ╔═╡ 5404378c-b517-4816-95f5-8311d10e7cdb
-savefig(mdb_set, "results/"*output_filename)
+savefig(mdb_set, if output_filename != "" "results/"*output_filename else "results/problem-04" end)
 
 # ╔═╡ eefaa698-100c-11f0-23e6-0f91da5981cb
 md"![](results/T4_cubic_mandelbrot_set.png)"
@@ -122,7 +122,7 @@ md"![](results/T4_cubic_mandelbrot_set.png)"
 # ╟─ac494e9f-b9bb-4394-94c0-3498f62b5fdd
 # ╠═eefaa682-100c-11f0-3c37-19e41d48cef8
 # ╠═eefaa68e-100c-11f0-1080-93cf0acc1fd1
-# ╟─c15ea9c3-ed1d-4c0b-bb65-c820293581f7
+# ╠═c15ea9c3-ed1d-4c0b-bb65-c820293581f7
 # ╟─5404378c-b517-4816-95f5-8311d10e7cdb
 # ╟─00a6ce1f-3d2a-49be-a149-7d6c26c07e12
 # ╟─8ad16e4a-2180-422b-9a21-38429165b311
