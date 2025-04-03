@@ -232,7 +232,7 @@ ylabel!("Im")
 end
 
 # ╔═╡ 54687aa4-b3e7-444d-9195-b68768a6a77c
-savefig(julia_set, if output_filename != "" "results/"*output_filename else "results/problem-02" end)
+savefig(julia_set, if (!ismissing(output_filename) && (output_filename != "")) "results/"*output_filename else "results/problem-02" end)
 
 # ╔═╡ Cell order:
 # ╟─0142c4dc-0fdf-11f0-3403-77788dee9947

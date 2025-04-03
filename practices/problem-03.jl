@@ -154,7 +154,7 @@ begin
 end
 
 # ╔═╡ 82609208-65b4-405d-869d-de30f50fd57d
-savefig(julia_set, if output_filename != "" "results/"*output_filename else "results/problem-03" end)
+savefig(julia_set, if (!ismissing(output_filename) && (output_filename != "")) "results/"*output_filename else "results/problem-03" end)
 
 # ╔═╡ Cell order:
 # ╟─040bc779-2a7d-43af-82d2-2608f02bdc60

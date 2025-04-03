@@ -124,7 +124,7 @@ end
 @bind output_filename_c1 confirm(@htl("Choose output filename $(TextField())"))
 
 # ╔═╡ de754bf5-43c9-4121-8190-8ade1a284e10
-savefig(c1_plot, if output_filename_c1 != "" "results/"*output_filename_c1 else "results/problem-05-1" end)
+savefig(c1_plot, if (!ismissing(output_filename_c1) && (output_filename_c1 != "")) "results/"*output_filename_c1 else "results/problem-05-1" end)
 
 # ╔═╡ f10093ee-100c-11f0-26bf-a91b9bb3e50e
 md"![](results/T5_period2_A_0.310_1.620.png)"
@@ -183,7 +183,7 @@ end
 @bind output_filename_c2 confirm(@htl("Choose output filename $(TextField())"))
 
 # ╔═╡ 8ffb4cb4-bda8-44a7-a16b-d7a30701e7a0
-savefig(c2_plot, if output_filename_c2 != "" "results/"*output_filename_c2 else "results/problem-05-2" end)
+savefig(c2_plot, if (!ismissing(output_filename_c2) && (output_filename_c2 != "")) "results/"*output_filename_c2 else "results/problem-05-2" end)
 
 # ╔═╡ f10094b6-100c-11f0-1188-9fdf3e028986
 md"![](results/T5_period2_A_0.275_1.650.png)"

@@ -200,7 +200,7 @@ s_cathala = SegmentIterration(
 cathala_invariant_set = plot(map(x->x[1], s_cathala), map(x->x[2], s_cathala), label = nothing)
 
 # ╔═╡ 8fd68b8c-ed26-410a-84b0-353c817a74ad
-savefig(cathala_invariant_set,  if output_filename_cathala != "" "results/"*output_filename_cathala else "results/problem-01-cathala.png" end);
+savefig(cathala_invariant_set,  if (!ismissing(output_filename_cathala) && (output_filename_cathala != "")) "results/"*output_filename_cathala else "results/problem-01-cathala.png" end);
 
 # ╔═╡ 3cf8e54b-44bd-4e03-8993-ea7f06c0bb06
 s_henon = SegmentIterration(
@@ -211,7 +211,7 @@ s_henon = SegmentIterration(
 henon_invariant_set = plot(map(x->x[1], s_henon), map(x->x[2], s_henon), label = nothing)
 
 # ╔═╡ 70dbeb84-631e-4186-85c2-7037cc3ee1c1
-savefig(henon_invariant_set, if output_filename_henon != "" "results/"*output_filename_henon else "results/problem-01-henon.png" end);
+savefig(henon_invariant_set, if (!ismissing(output_filename_henon) && (output_filename_henon != "")) "results/"*output_filename_henon else "results/problem-01-henon.png" end);
 
 # ╔═╡ Cell order:
 # ╠═6d74a1d4-1af5-47f3-8d55-e57244fe50c4

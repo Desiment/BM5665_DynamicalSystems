@@ -107,7 +107,7 @@ begin
 end
 
 # ╔═╡ 5404378c-b517-4816-95f5-8311d10e7cdb
-savefig(mdb_set, if output_filename != "" "results/"*output_filename else "results/problem-04" end)
+savefig(mdb_set, if (!ismissing(output_filename) && (output_filename != "")) "results/"*output_filename else "results/problem-04" end)
 
 # ╔═╡ eefaa698-100c-11f0-23e6-0f91da5981cb
 md"![](results/T4_cubic_mandelbrot_set.png)"
