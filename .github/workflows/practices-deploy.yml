@@ -1,0 +1,49 @@
+name: deploy-github-pages
+
+on:
+  push:
+    branches: [ master ]
+
+# Allow one concurrent deployment + permissions
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: '1.11.4'
+
+      - name: Install dependencies
+        run: julia --project=@. -e 'using Pkg; Pkg.instantiate()'
+
+      - name: Export notebooks
+        run: julia --project=@. scripts/export.jl
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: public/
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v
