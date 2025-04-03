@@ -240,7 +240,7 @@ savefig(julia_set, "results/"*output_filename)
 # ╟─dd7de283-d8a8-47ed-96a1-98ee4d715abd
 # ╟─0142570c-0fdf-11f0-2ec7-1378fe6665f6
 # ╟─0142c5ac-0fdf-11f0-11ec-6919b42c22a9
-# ╟─9cd321b6-f105-434c-b0ae-5fc44c6a6988
+# ╠═9cd321b6-f105-434c-b0ae-5fc44c6a6988
 # ╟─0142c55c-0fdf-11f0-1369-d1e8b81243e6
 # ╠═db90c4f7-1b31-4761-922b-f31c38f9f9d0
 # ╠═0d825988-e841-40ff-98f6-abaf52c43757
