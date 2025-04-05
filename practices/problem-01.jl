@@ -144,7 +144,7 @@ md"""
 		<h5>Параметры системы</h5>
 		<ul>
 		$([
-			@htl("<li>s₁: $(Child("s_1", NumberField(-1:0.01:1; default=1.4)))"),
+			@htl("<li>s₁: $(Child("s_1", NumberField(-2:0.01:2; default=1.4)))"),
 			@htl("<li>s₂: $(Child("s_2", NumberField(-1:0.01:1; default=0.3)))")
 		])
 		</ul>
@@ -214,7 +214,7 @@ henon_invariant_set = plot(map(x->x[1], s_henon), map(x->x[2], s_henon), label =
 savefig(henon_invariant_set, if (!ismissing(output_filename_henon) && (output_filename_henon != "")) "results/"*output_filename_henon else "results/problem-01-henon.png" end);
 
 # ╔═╡ Cell order:
-# ╠═6d74a1d4-1af5-47f3-8d55-e57244fe50c4
+# ╟─6d74a1d4-1af5-47f3-8d55-e57244fe50c4
 # ╟─2ea660b7-a2f0-46d5-974e-4866cdbffb3e
 # ╟─d03eed77-0cac-411c-854f-2ef79f2d78f4
 # ╠═188550a0-870c-4f35-bfb4-0d1e5ea15d5b
@@ -229,7 +229,7 @@ savefig(henon_invariant_set, if (!ismissing(output_filename_henon) && (output_fi
 # ╟─8fd68b8c-ed26-410a-84b0-353c817a74ad
 # ╟─c5886b94-cc49-4537-8257-369ab176de13
 # ╟─67362432-09ac-44e8-b2ce-92e42cfaba70
-# ╠═adda50bc-5fef-434d-bad8-b1863ca6f341
+# ╟─adda50bc-5fef-434d-bad8-b1863ca6f341
 # ╠═3cf8e54b-44bd-4e03-8993-ea7f06c0bb06
 # ╠═af42638e-702d-4a75-868d-e379ce4873e4
 # ╟─d570c279-328e-4e84-a68c-6c949f08e141
